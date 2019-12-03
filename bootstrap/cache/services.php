@@ -28,21 +28,25 @@
     24 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
     25 => 'Intervention\\Image\\ImageServiceProvider',
     26 => 'Laravel\\Horizon\\HorizonServiceProvider',
-    27 => 'Laravel\\Tinker\\TinkerServiceProvider',
-    28 => 'Laravel\\Ui\\UiServiceProvider',
-    29 => 'Mews\\Captcha\\CaptchaServiceProvider',
-    30 => 'Mews\\Purifier\\PurifierServiceProvider',
-    31 => 'Carbon\\Laravel\\ServiceProvider',
-    32 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
-    33 => 'Spatie\\Permission\\PermissionServiceProvider',
-    34 => 'Frozennode\\Administrator\\AdministratorServiceProvider',
-    35 => 'Summerblue\\Generator\\GeneratorsServiceProvider',
-    36 => 'Overtrue\\LaravelLang\\TranslationServiceProvider',
-    37 => 'App\\Providers\\AppServiceProvider',
-    38 => 'App\\Providers\\AuthServiceProvider',
-    39 => 'App\\Providers\\EventServiceProvider',
-    40 => 'App\\Providers\\RouteServiceProvider',
-    41 => 'App\\Providers\\EasySmsServiceProvider',
+    27 => 'Laravel\\Socialite\\SocialiteServiceProvider',
+    28 => 'Laravel\\Tinker\\TinkerServiceProvider',
+    29 => 'Laravel\\Ui\\UiServiceProvider',
+    30 => 'Mews\\Captcha\\CaptchaServiceProvider',
+    31 => 'Mews\\Purifier\\PurifierServiceProvider',
+    32 => 'Carbon\\Laravel\\ServiceProvider',
+    33 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    34 => 'SocialiteProviders\\Manager\\ServiceProvider',
+    35 => 'Spatie\\Permission\\PermissionServiceProvider',
+    36 => 'Frozennode\\Administrator\\AdministratorServiceProvider',
+    37 => 'Summerblue\\Generator\\GeneratorsServiceProvider',
+    38 => 'Tymon\\JWTAuth\\Providers\\LaravelServiceProvider',
+    39 => 'Overtrue\\LaravelLang\\TranslationServiceProvider',
+    40 => 'App\\Providers\\AppServiceProvider',
+    41 => 'App\\Providers\\AuthServiceProvider',
+    42 => 'App\\Providers\\EventServiceProvider',
+    43 => 'App\\Providers\\RouteServiceProvider',
+    44 => 'App\\Providers\\EasySmsServiceProvider',
+    45 => 'SocialiteProviders\\Manager\\ServiceProvider',
   ),
   'eager' => 
   array (
@@ -70,11 +74,12 @@
     21 => 'Spatie\\Permission\\PermissionServiceProvider',
     22 => 'Frozennode\\Administrator\\AdministratorServiceProvider',
     23 => 'Summerblue\\Generator\\GeneratorsServiceProvider',
-    24 => 'App\\Providers\\AppServiceProvider',
-    25 => 'App\\Providers\\AuthServiceProvider',
-    26 => 'App\\Providers\\EventServiceProvider',
-    27 => 'App\\Providers\\RouteServiceProvider',
-    28 => 'App\\Providers\\EasySmsServiceProvider',
+    24 => 'Tymon\\JWTAuth\\Providers\\LaravelServiceProvider',
+    25 => 'App\\Providers\\AppServiceProvider',
+    26 => 'App\\Providers\\AuthServiceProvider',
+    27 => 'App\\Providers\\EventServiceProvider',
+    28 => 'App\\Providers\\RouteServiceProvider',
+    29 => 'App\\Providers\\EasySmsServiceProvider',
   ),
   'deferred' => 
   array (
@@ -180,6 +185,7 @@
     'auth.password.broker' => 'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider',
     'validator' => 'Illuminate\\Validation\\ValidationServiceProvider',
     'validation.presence' => 'Illuminate\\Validation\\ValidationServiceProvider',
+    'Laravel\\Socialite\\Contracts\\Factory' => 'SocialiteProviders\\Manager\\ServiceProvider',
     'Laravel\\Ui\\AuthCommand' => 'Laravel\\Ui\\UiServiceProvider',
     'Laravel\\Ui\\UiCommand' => 'Laravel\\Ui\\UiServiceProvider',
     'translator' => 'Overtrue\\LaravelLang\\TranslationServiceProvider',
@@ -221,7 +227,13 @@
     'Illuminate\\Validation\\ValidationServiceProvider' => 
     array (
     ),
+    'Laravel\\Socialite\\SocialiteServiceProvider' => 
+    array (
+    ),
     'Laravel\\Ui\\UiServiceProvider' => 
+    array (
+    ),
+    'SocialiteProviders\\Manager\\ServiceProvider' => 
     array (
     ),
     'Overtrue\\LaravelLang\\TranslationServiceProvider' => 
