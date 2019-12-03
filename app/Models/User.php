@@ -74,7 +74,7 @@ class User extends Authenticatable implements MustVerifyEmailContracts, JWTSubje
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'wx_openid', 'wx_unionid'
     ];
 
     /**
