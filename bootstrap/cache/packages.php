@@ -118,6 +118,13 @@
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     ),
   ),
+  'overtrue/laravel-query-logger' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Overtrue\\LaravelQueryLogger\\ServiceProvider',
+    ),
+  ),
   'socialiteproviders/manager' => 
   array (
     'providers' => 
@@ -130,6 +137,13 @@
     'providers' => 
     array (
       0 => 'Spatie\\Permission\\PermissionServiceProvider',
+    ),
+  ),
+  'spatie/laravel-query-builder' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\QueryBuilder\\QueryBuilderServiceProvider',
     ),
   ),
   'summerblue/administrator' => 

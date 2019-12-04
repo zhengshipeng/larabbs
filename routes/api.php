@@ -39,16 +39,43 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
     Route::middleware('throttle:' . config('api.rate_limits.access'))->group(function () {
 
         /** 游客可以访问的接口 **/
+        // 用户信息
         Route::get('users/{user}', 'UsersController@show')->name('users.show');
+        // 分类列表
+        Route::get('categories', 'CategoriesController@index')->name('categories.index');
+        // 话题列表
+        Route::resource('topics', 'TopicsController')->only(['index', 'show']);
+        // 用户发布的话题列表
+        Route::get('users/{user}/topics', 'TopicsController@userIndex')->name('users.topics.index');
+        // 话题回复列表
+        Route::get('topics/{topic}/replies', 'RepliesController@index')->name('topics.replies.index');
+        // 用户发布的回复列表
+        Route::get('users/{user}/replies', 'RepliesController@userIndex')->name('users.replies.index');
 
         /** 登录后可以访问的接口 **/
         Route::middleware('auth:api')->group(function () {
             // 当前登录用户信息
             Route::get('user', 'UsersController@me')->name('user.show');
+            // 当前登录用户的权限
+            Route::get('user/permissions', 'PermissionsController@index')->name('user.permissions.index');
             // 上传图片
             Route::post('images', 'ImagesController@store')->name('images.store');
             // 编辑登录用户信息
             Route::patch('user', 'UsersController@update')->name('user.update');
+
+            // 发布,修改，删除 话题
+            Route::resource('topics', 'TopicsController')->only(['store', 'update', 'destroy']);
+
+            // 发布话题回复
+            Route::post('topics/{topic}/replies', 'RepliesController@store')->name('topics.replies.store');
+            // 删除话题回复
+            Route::delete('topics/{topic}/replies/{reply}', 'RepliesController@destroy')->name('topics.replies.destroy');
+            // 通知列表
+            Route::get('notifications', 'NotificationsController@index')->name('notifications.index');
+            // 通知统计
+            Route::get('notifications/stats', 'NotificationsController@stats')->name('notifications.stats');
+            // 通知标记为已读
+            Route::patch('user/read/notifications', 'NotificationsController@read')->name('user.notifications.read');
         });
     });
 });
