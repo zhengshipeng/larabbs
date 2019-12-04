@@ -83,6 +83,16 @@ class UsersController extends Controller
         return (new UserResource($user))->showSensitiveFields();
     }
 
+    /**
+     * 活跃用户
+     * @param User $user
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
+    public function activedIndex(User $user)
+    {
+        return UserResource::collection($user->getActiveUsers());
+    }
+
 
 
 

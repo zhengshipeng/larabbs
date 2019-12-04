@@ -34,15 +34,15 @@ trait ActiveUserHelper
     {
         $this->calculateReplyScore();
         $this->calculateTopicScore();
+
         $users  = \Illuminate\Support\Arr::sort($this->users, function ($user) {
             return $user['score'];
         });
 
         $users = array_reverse($users, true);
+        $users = array_slice($users, 0, $this->user_number, true);
 
-        $users = array_splice($users, 0, $this->user_number, true);
         $active_users = collect();
-
         foreach ($users as $user_id => $user) {
             $user = $this->find($user_id);
             if ($user) {
