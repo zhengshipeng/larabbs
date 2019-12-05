@@ -178,6 +178,7 @@ return [
 
         App\Providers\EasySmsServiceProvider::class,
         \SocialiteProviders\Manager\ServiceProvider::class,
+        App\Providers\JpushServiceProvider::class,
 
     ],
 

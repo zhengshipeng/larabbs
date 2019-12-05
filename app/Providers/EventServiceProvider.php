@@ -26,6 +26,9 @@ class EventServiceProvider extends ServiceProvider
         Verified::class => [
             \App\Listeners\EmailVerified::class,
         ],
+        'eloquent.created:Illuminate\Notifications\DatabaseNotification' => [
+            'App\Listeners\PushNotification',
+        ],
     ];
 
     /**

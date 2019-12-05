@@ -49,6 +49,7 @@
     45 => 'App\\Providers\\RouteServiceProvider',
     46 => 'App\\Providers\\EasySmsServiceProvider',
     47 => 'SocialiteProviders\\Manager\\ServiceProvider',
+    48 => 'App\\Providers\\JpushServiceProvider',
   ),
   'eager' => 
   array (
@@ -84,6 +85,7 @@
     29 => 'App\\Providers\\EventServiceProvider',
     30 => 'App\\Providers\\RouteServiceProvider',
     31 => 'App\\Providers\\EasySmsServiceProvider',
+    32 => 'App\\Providers\\JpushServiceProvider',
   ),
   'deferred' => 
   array (

@@ -26,7 +26,7 @@ class AuthorizationsController extends Controller
         $credentials['password'] = $request->password;
 
         if (! $token = \Auth::guard('api')->attempt($credentials)) {
-            throw new AuthenticationException('用户或者密码错误');
+            throw new AuthenticationException(trans('auth.failed'));
         }
 
         return $this->respondWithToken($token)->setStatusCode(201);
@@ -57,7 +57,7 @@ class AuthorizationsController extends Controller
             $oauthUser = $driver->userFromToken($token);
 
         } catch (\Exception $e) {
-            throw new AuthenticationException('参数错误，为获取用户信息');
+            throw new AuthenticationException('参数错误，未获取用户信息');
         }
 
         switch ($type) {
